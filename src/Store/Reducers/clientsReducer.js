@@ -1,16 +1,17 @@
-import { GET_CLIENTS, DELETE_CLIENT, ADD_CLIENT, GET_CLIENT, UPDATE_CLIENT } from '../types';
+import { GET_CLIENTS } from '../types';
 
 const initialState = {
-    clients: [
-        {id:1, name: 'Peishion', lastName: 'Cookie', phone:'5566889900', email:'peishion@asd.com'},
-        {id:2, name: 'Capuchina', lastName: 'Precishi', phone:'7766554433', email:'capuchina@asd.com'},
-    ],
+    clients: [],
     client:{} // contacto seleccionado al editar
 };
 
 export default function(state = initialState, action){
     switch(action.type){
-       
+        case GET_CLIENTS:
+        return{
+            ...state,
+            clients: action.payload
+        };
         default:
             return state;
     }
